@@ -14,7 +14,7 @@ public class Main {
 
         // create context (container)
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
-        NumberGenerator numberGenerator = context.getBean("numberGenerator", NumberGenerator.class);
+        NumberGenerator numberGenerator = context.getBean( NumberGenerator.class);
 
         // call method next()
 
