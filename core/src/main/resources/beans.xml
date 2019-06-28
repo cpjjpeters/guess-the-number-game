@@ -7,11 +7,13 @@
 
     <bean id="numberGenerator" class="be.ipeters.NumberGeneratorImpl">
     <!-- collaborators and configuration for this bean go here -->
-</bean>
+    </bean>
 
     <bean id="game" class="be.ipeters.GameImpl">
-        <!-- collaborators and configuration for this bean go here -->
+        <!-- collaborators and configuration for this bean go here
         <constructor-arg ref = "numberGenerator"/>
+        -->
+        <property name="numberGenerator" ref="numberGenerator"/>
     </bean>
 
     <!-- more bean definitions go here -->

@@ -17,11 +17,15 @@ public class GameImpl implements Game {
     private int remainingGuesses;
     private boolean validNumberRange = true;
 
-    // == constructors ==
-    public GameImpl(NumberGenerator numberGenerator) {
+    // == constructors == ofr construcor based dependency injection, remove for setterbased d i
+//    public GameImpl(NumberGenerator numberGenerator) {
+//        this.numberGenerator = numberGenerator;
+//    }
+
+    // == public methods ==  setter based dependency injection,
+    public void setNumberGenerator(NumberGenerator numberGenerator) {
         this.numberGenerator = numberGenerator;
     }
-
     public void reset() {
         // public methods
         smallest = 0;
