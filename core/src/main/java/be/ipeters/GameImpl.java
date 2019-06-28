@@ -2,12 +2,14 @@ package be.ipeters;
 
 import ch.qos.logback.classic.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class GameImpl implements Game {
     // == constants
 
     private static final Logger log = (Logger) LoggerFactory.getLogger(GameImpl.class);
-
+    // == fields ==
+    @Autowired
     private NumberGenerator numberGenerator;
     private int guessCount = 10;
     private int number;
@@ -22,10 +24,7 @@ public class GameImpl implements Game {
 //        this.numberGenerator = numberGenerator;
 //    }
 
-    // == public methods ==  setter based dependency injection,
-    public void setNumberGenerator(NumberGenerator numberGenerator) {
-        this.numberGenerator = numberGenerator;
-    }
+    // == public methods ==
     public void reset() {
         // public methods
         smallest = 0;
