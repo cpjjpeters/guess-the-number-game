@@ -29,7 +29,7 @@ public class Main {
         // call reset method
         game.reset();
 
-        log.info("number = {}", number);
+        log.info("after game.reset() number = {}", number);
         // close context
         context.close();
 

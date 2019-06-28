@@ -34,7 +34,7 @@ public class GameImpl implements Game {
         log.debug("remainingGuesses = {}, biggest = {}", remainingGuesses, biggest);
         biggest = numberGenerator.getMaxNumber();
         number= numberGenerator.next();
-        log.debug("the number is {}", number);
+        log.debug("in the reset the number is {}", number);
 
     }
 
