@@ -1,19 +1,21 @@
 package be.ipeters;
 
-import ch.qos.logback.classic.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+@Slf4j
 public class Main {
-    private final static Logger log = (Logger) LoggerFactory.getLogger(Main.class);
+//    private final static Logger log = (Logger) LoggerFactory.getLogger(Main.class);  // comment because using Lombok
 
     public static void main(String[] args) {
-        log.info("Guess the number Game without beans.xml");
+        log.info("Guess the number Game with addedbeans.xml for MessageGenerator");
 
         // create context (container)
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        NumberGenerator numberGenerator = context.getBean( NumberGenerator.class);
+        // get number generator bean from context (container)
+        NumberGenerator numberGenerator
+                = context.getBean(NumberGenerator.class);
 
         // call method next()
 
@@ -22,14 +24,15 @@ public class Main {
         // log generated number
         log.info("number = {}", number);
 
-        // get game bean from context (container)
-        Game game = context.getBean(Game.class);
+        // get message generator bean from context (container)
+        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
+        log.info("getMainMessage= {}", messageGenerator.getMainMessage());
+        log.info("getMainMessage= {}", messageGenerator.getResultMessage());
 
         // call reset method
-        game.reset();
+//        game.reset();
 
-        log.info("after game.reset() number = {}", number);
-        // close context
+                // close context
         context.close();
 
 

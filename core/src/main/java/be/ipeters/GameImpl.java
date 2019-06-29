@@ -5,6 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
 public class GameImpl implements Game {
     // == constants
@@ -27,6 +30,9 @@ public class GameImpl implements Game {
 //    }
 
     // == public methods ==
+    // == init ==
+    @PostConstruct
+    @Override
     public void reset() {
         // public methods
         smallest = 0;
@@ -39,6 +45,10 @@ public class GameImpl implements Game {
 
     }
 
+    @PreDestroy
+    public void preDestroy() {
+        log.info("in Game preDestroy()");
+    }
     public int getNumber() {
         return number;
     }
