@@ -1,5 +1,8 @@
-package be.ipeters;
+package be.ipeters.console;
 
+import be.ipeters.AppConfig;
+import be.ipeters.MessageGenerator;
+import be.ipeters.NumberGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
