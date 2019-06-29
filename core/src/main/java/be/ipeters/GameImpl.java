@@ -77,6 +77,7 @@ public class GameImpl implements Game {
 
     public void check() {
         checkValidNumberRange();
+
         if(validNumberRange){
             if(guess > number){
                 biggest = guess -1;

@@ -12,7 +12,7 @@ public class Main {
 //    private final static Logger log = (Logger) LoggerFactory.getLogger(Main.class);  // comment because using Lombok
 
     public static void main(String[] args) {
-        log.info("Guess the number Game with addedbeans.xml for MessageGenerator");
+        log.info("Guess the number Game almost finished");
 
         // create context (container)
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -25,7 +25,7 @@ public class Main {
         int number = numberGenerator.next();
 
         // log generated number
-        log.info("number = {}", number);
+        log.info("generated number = {}", number);
 
         // get message generator bean from context (container)
         MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
